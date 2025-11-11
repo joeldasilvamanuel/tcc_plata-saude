@@ -1,0 +1,10 @@
+# tcc_plata-saude/public/.htaccess
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Se o ficheiro ou diretório existir, use-o
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Caso contrário, redirecione tudo para o index.php
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
